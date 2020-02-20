@@ -1,0 +1,13 @@
+<h2>Search Result</h2>
+
+<h3>Channels</h3>
+<% @channels.each do |channel| %>
+   <%= channel.name %> <br>
+<% end %>
+
+<h3>Shows</h3>
+<% @shows.each do |show| %>
+	<%= show.name %> <br>
+<% end %>
+
+<h1><%= link_to "Back To Home Page", root_url %></h1>

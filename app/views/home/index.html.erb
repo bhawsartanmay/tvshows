@@ -1,0 +1,22 @@
+<%= render "search" %> <br>
+
+<table border="1">
+		<tr>
+			<td><b>Show Name</b></td>
+			<td><b>Show Time</b></td>
+			<td><b>Channel</b></td>
+			<td><b>Action</b></td>
+		</tr>
+<% @shows.each do |show| %>
+	<tr>
+		<td><h2><%= show.name %></h2></td>
+		<td><%= show.show_time %></td>
+		<td><%= show.channel.name %></td>
+		<% if show.favorite == false %>
+		  <td><%= link_to "Mark Favorite", show_favorite_path(show, fav: true) %></td>
+		<% else %>
+		  <td><%= link_to "Remove Favorite", show_favorite_path(show) %></td>
+		<% end %>  
+	</tr>
+<% end %>
+</table>
